@@ -1,0 +1,42 @@
+# https://leetcode.com/problems/spiral-matrix-ii/
+
+class Solution:
+    def generateMatrix(self, n: int) -> List[List[int]]:
+        result = [[0 for num in range(n)] for num in range(n)]
+        print(result)
+        count = 1
+        layerMax = (n + 1) / 2
+        layer = 0
+        while layer < layerMax:
+            # direction 1 - traverse from left to right
+            pointer = layer
+            while pointer < (n - layer):
+                result[layer][pointer] = (count)
+                count += 1
+                pointer += 1
+                
+            # direction 2 - traverse from top to bottom
+            pointer = layer + 1
+            while pointer < (n - layer):
+                result[pointer][n - layer - 1] = count
+                count += 1
+                pointer += 1
+                
+            # direction 3 - traverse from right to left
+            pointer = layer + 1
+            while pointer < (n - layer):
+                result[n - layer - 1][n - pointer - 1] = count
+                count += 1
+                pointer += 1
+            
+            # direction 4 - traverse from bottom to top
+            pointer = layer + 1
+            while pointer < (n - layer - 1):
+                result[n - pointer - 1][layer] = count
+                count += 1
+                pointer += 1
+            
+            layer += 1
+            
+        return result
+        
