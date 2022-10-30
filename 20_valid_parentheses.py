@@ -3,18 +3,23 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         my_stack = []
-        characters_dict = {")":"(", "}":"{", "]":"["}
+        
+        inputs_dict = {
+            ')': '(',
+            '}': '{',
+            ']': '['
+        }
         
         for letter in s:
-            if letter in characters_dict.values():
-                my_stack.append(letter)
-            elif letter in characters_dict.keys():
-                if my_stack == [] or characters_dict[letter] != my_stack.pop():
+            print(letter)
+            if letter in inputs_dict:
+                if len(my_stack) == 0 or my_stack.pop() != inputs_dict[letter]:
                     return False
-               
-        if my_stack != []:
+            else:
+                my_stack.append(letter)
+                
+        if len(my_stack) != 0:
             return False
         else:
             return True
-            
-                
+        
