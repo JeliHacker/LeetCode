@@ -14,7 +14,7 @@ def insert(intervals: list[list[int]], newInterval: list[int]) -> list[list[int]
                 
         return res
 
-input_intervals = [[1,3], [6,9]]
+input_intervals = [[-1,4], [3,9]]
 input_newInterval = [2,5]
 
 print(insert(input_intervals, input_newInterval))
