@@ -2,24 +2,27 @@
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        my_stack = []
-        
-        inputs_dict = {
-            ')': '(',
-            '}': '{',
-            ']': '['
+        bracket_stack = []
+
+        bracket_dict = {
+            "}": "{",
+            "]": "[",
+            ")": "("
         }
-        
-        for letter in s:
-            print(letter)
-            if letter in inputs_dict:
-                if len(my_stack) == 0 or my_stack.pop() != inputs_dict[letter]:
+
+        for character in s:
+            if character in bracket_dict:
+                if len(bracket_stack) == 0:
                     return False
-            else:
-                my_stack.append(letter)
+                else:
+                    top_char = bracket_stack.pop()
+                    if top_char != bracket_dict[character]:
+                        return False
                 
-        if len(my_stack) != 0:
+            else:
+                bracket_stack.append(character)
+
+        if len(bracket_stack) > 0:
             return False
         else:
             return True
-        
