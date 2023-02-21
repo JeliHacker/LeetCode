@@ -4,3 +4,7 @@ Comes with a script to convert Leetcode solutions so that they can be ran in [Th
 Thus, some solutions have been changed so that they can run in Thonny and may not work in Leetcode with making changes.
 
 [Leetcode Profile](https://leetcode.com/JeliHacker/)
+
+
+Resources:
+[Here](https://leetcode.com/Yawn_Sean/) is an account that does solutions in Python
