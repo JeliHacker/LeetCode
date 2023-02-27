@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/minimum-score-by-changing-two-elements/description/
 
 class Solution:
-    def minimizeSum(self, nums: List[int]) -> int:
+    def minimizeSum(nums: list[int]) -> int:
         n = len(nums)
         nums.sort()
         return min(
