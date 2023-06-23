@@ -7,4 +7,4 @@ Thus, some solutions have been changed so that they can run in Thonny and may no
 
 
 Resources:
-[Here](https://leetcode.com/Yawn_Sean/) is an account that does solutions in Python
+[Here](https://leetcode.com/Yawn_Sean/) is an account that does solutions in Python.
